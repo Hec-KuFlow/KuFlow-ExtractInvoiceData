@@ -11,7 +11,7 @@ Before starting your workflow for the first time, you must register in [KuFlow (
 
 ### Create the Credentials
 
-#### Create the credentials for the Worker​
+#### Create the credentials for the Worker
 
 We will configure an `APPLICATION` that will provide us with the necessary credentials so that our worker (written in Java, TypeScript, or Python and located in your own machine) can interface with KuFlow.
 
@@ -40,7 +40,7 @@ Finally, you get something like:
 
 <div class="text--center">
 
-![](/img//TUT-01-App.png)
+![](/img//App.png)
 
 </div>
 
@@ -343,7 +343,7 @@ Please note that this is a YAML, respect the indentation. You'll get something l
 
 <div class="text--center">
 
-![](/img/TUT-06-Template_3.png)
+![](/img/Template_3.png)
 
 </div>
 
