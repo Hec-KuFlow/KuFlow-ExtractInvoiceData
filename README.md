@@ -172,7 +172,7 @@ You'll get something like:
 
 <div class="text--center">
 
-![](/img/TUT14-04-Task.png)
+![](/img/TUT14-04-Task3.png)
 
 </div>
 
@@ -192,7 +192,7 @@ You'll get something like:
 
 <div class="text--center">
 
-![](/img/TUT14-04-Task2.png)
+![](/img/TUT14-04-Task4.png)
 
 </div>
 
@@ -212,7 +212,7 @@ You'll get something like:
 
 <div class="text--center">
 
-![](/img/TUT14-04-Task2.png)
+![](/img/TUT14-04-Task5.png)
 
 </div>
 
@@ -223,9 +223,9 @@ By clicking on the `Publish` button you’ll receive a confirmation request mess
 
 <div class="text--center">
 
-![](/img/TUTXX-05-publish_1.png)
+![](/img/TUT14-05-publish_1.png)
 
-![](/img/TUTXX-05-publish_2.png)
+![](/img/TUT14-05-publish_2.png)
 
 </div>
 
@@ -233,9 +233,9 @@ Now, you can download a sample Workflow Implementation from the Process Definiti
 
 <div class="text--center">
 
-![](/img/TUTXX-07-Template_1.png)
+![](/img/TUT14-07-Template_1.png)
 
-![](/img/TUTXX-07-Template_2.png)
+![](/img/TUT14-07-Template_2.png)
 
 </div>
 
@@ -261,7 +261,7 @@ This code will serve as a starting point for implementing our application worker
 
 **Note:** You can download the following project from our [Community Github repository](https://github.com/Hec-KuFlow)
 
-### Create the Virtual Environment and resolve dependencies​
+### Create the Virtual Environment and resolve dependencies
 
 Once you have unzipped the template, open it and, on a new terminal window in your IDE, execute the following commands:
 
@@ -369,6 +369,7 @@ Since we are going to use two particular libraries for this example, we must add
 
 - **poetry add pillow**
 - **poetry add pytesseract**
+
 ```python
 #
 # Copyright (c) 2023-present KuFlow S.L.
@@ -541,6 +542,7 @@ At the end of this asynchronous task, we add a "return id" line for further refe
 ```
 
 #### Task Two: File Processing (create_task_file__processing)
+
 As we said before, we have to convert this activity to synchronous.
 
 First, we add the variable "upload_task_id: str" as an argument, which will receive the id of the file upload task (task one).
@@ -628,6 +630,7 @@ Finally, the function also returns a response of type InvoiceDataExtractionRespo
 ```
 
 #### Task Three: Data Validation (create_task_data__validation)
+
 First, we add the variable "final_data: InvoiceDataExtractionResponse" as an argument, which will receive the data from the file processing task (task two).
 
 The changes made to this piece of code involve setting values for some task elements before creating and executing the task. Specifically, four elements for buyer name, invoice ID, invoice date, and grand total are set with values extracted from the final_data object.
@@ -664,6 +667,7 @@ The effect of these changes is that when the task is executed, it will have elem
 ```
 
 #### Task Four: Invoice Processing (create_task_invoice__processing)
+
 The original code is an Asynchronous task waiting for its completion. The new code changes to Synchronous and adds the ability to claim, log, and complete the task, like the second task, with the difference that here we don't execute any activity.
 
 
@@ -725,6 +729,7 @@ The original code is an Asynchronous task waiting for its completion. The new co
 ```
 
 #### Task Five: Processing Response(create_task_process__response)
+
 The original code is an Asynchronous task waiting for its completion. The new code changes to Synchronous and adds the ability to claim and complete the task; we add a routine that generates a random number to emulate the response of any external system in charge of processing the invoice. Here is where you can call a method of your activities that connects to a CRM, database engine, or anything else you need.
 
 ```python
@@ -776,7 +781,7 @@ The final step with the code is including the imports needed for this tutorial u
 
 ## Testing
 
-We can test all that we have done by running the “worker.py” (*like pressing **F5** in Visual Studio Code*):
+We can test all that we have done by running the “worker.py” (*like pressing **F5** in Visual Studio Code*) using the interpreter correspondig of your virtual environment:
 
 <div class="text--center">
 
@@ -800,7 +805,7 @@ Select a file to upload and complete the task.
 
 </div>
 
-Validate the data, and then answer whether or not you want to process the invoice data.
+After the progress activity finalization, validate the data, and then answer whether or not you want to process the invoice data.
 
 <div class="text--center">
 
@@ -808,7 +813,7 @@ Validate the data, and then answer whether or not you want to process the invoic
 
 </div>
 
-The progress will be displayed on the screen, followed by the response code of the external system.
+ using the interpreter correspondig to your virtual environment followed by the response code of the external system.
 
 <div class="text--center">
 
@@ -836,5 +841,3 @@ Here you can watch all steps in this video:
 </a>
 
 We sincerely hope that this step-by-step guide will help you to understand better how KuFlow can help your business to have better and more solid business processes.
-
-
