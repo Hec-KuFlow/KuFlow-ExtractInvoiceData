@@ -13,7 +13,7 @@ Before starting your workflow for the first time, you must register in [KuFlow (
 
 #### Create the credentials for the Worker
 
-We will configure an `APPLICATION` that will provide us with the necessary credentials so that our worker (written in Java, TypeScript, or Python and located in your own machine) can interface with KuFlow.
+We will configure an `APPLICATION` that will provide us with the necessary credentials so that the worker (written in Java, TypeScript, or Python and located in your own machine) can interface with KuFlow.
 
 Go to the `Settings > Applications` menu and click on `Add application`. We establish the name we want and save. Next, you will get the first data needed to configure our Worker.
 
@@ -48,7 +48,7 @@ Finally, you get something like:
 
 ### Invoice example
 
-As we said in the introduction, we are starting from the assumption that we are constantly dealing with the same types of invoices (*from the same supplier*) and will use a pre-built invoice, which you can download from **here**. Keep in mind we will create some regular expressions based on it; if you use another invoice, please modify the text search methods and RegEx according to it.
+As we said in the introduction, we are starting from the assumption that we are constantly dealing with the same types of invoices (*from the same supplier*) and will use a pre-built invoice, which you can download from [**here**](https://github.com/Hec-KuFlow/KuFlow-ExtractInvoiceData/blob/main/invoice_1.jpg). Keep in mind we have created some regular expressions based on it; if you use another invoice, please modify the text search methods and RegEx according to it.
 
 ### Create the process definition
 
@@ -217,7 +217,7 @@ You'll get something like:
 </div>
 
 
-### Publish the process and download the template for the Workflow Worker​
+### Publish the process and download the template for the Workflow Worker
 
 By clicking on the `Publish` button you’ll receive a confirmation request message, once you have confirmed, the process will be published.
 
@@ -245,7 +245,7 @@ The following technologies have been mainly used in our example:
 
 - **Operating System:** Microsoft Windows 11 Professional
 - **IDE:** Visual Studio Code 
-  - You can use *VSCode*, *IntelliJ Idea*, *Eclipse*, *PyCharm*, *Atom*, *WebStorm*, or any other with corresponding language plugins.
+  - You can use *IntelliJ Idea*, *Eclipse*, *PyCharm*, *Atom*, *WebStorm*, or any other with corresponding language plugins.
 - **Python (>=3.8)**
 - **Poetry (>=1.3.2)**
   - For python packaging and dependency management
@@ -462,7 +462,7 @@ class InvoiceActivities:
         return client, invoice_number, invoice_date, invoice_total
 ```
 
-**NOTE**  You will find a file called "*standalone_activities.py*", which is the code that works outside this project in a stand-alone environment, to illustrate the changes it will receive to work in a KuFlow environment.
+**NOTE**  You will find a file called "[*standalone_activities.py*](https://github.com/Hec-KuFlow/KuFlow-ExtractInvoiceData/blob/main/standalone_activities.py)", which is the code that works outside this project in a stand-alone environment, to illustrate the changes it will receive to work in a KuFlow environment.
 
 ### Register Activities
 
@@ -781,7 +781,7 @@ The final step with the code is including the imports needed for this tutorial u
 
 ## Testing
 
-We can test all that we have done by running the “worker.py” (*like pressing **F5** in Visual Studio Code*) using the interpreter correspondig of your virtual environment:
+We can test all that we have done by running the “worker.py” (*like pressing **F5** in Visual Studio Code*) using the interpreter correspondig of your virtual environment, in our case  `Python 3.11.2('.venv':poetry)`:
 
 <div class="text--center">
 
@@ -797,7 +797,7 @@ And initiating the process in KuFlow’s UI.
 
 </div>
 
-Select a file to upload and complete the task.
+Select a file to upload and complete the task, we use the [invoice example](https://github.com/Hec-KuFlow/KuFlow-ExtractInvoiceData/blob/main/invoice_1.jpg).
 
 <div class="text--center">
 
