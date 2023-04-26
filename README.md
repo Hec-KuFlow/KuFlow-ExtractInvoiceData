@@ -777,6 +777,29 @@ The original code is an Asynchronous task waiting for its completion. The new co
         )
 ```
 
+Now we have to modify the "workflow run" method. The main change is the execution of some tasks, which after the modification will be dependent on the completion of others. As you will see, we assign the result of the first task to a variable (task_id), pass it as an argument to the second task, and repeat the same in the third.
+
+Having something like this:
+
+```python
+@workflow.run
+    async def run(
+        self, request: models_temporal.WorkflowRequest
+    ) -> models_temporal.WorkflowResponse:
+        workflow.logger.info(f"Process {request.processId} started")
+
+        task_id = await self.create_task_invoice__upload(request.processId)
+        final_data = await self.create_task_file__processing(request.processId, task_id)
+        await self.create_task_data__validation(request.processId, final_data)
+        await self.create_task_invoice__processing(request.processId)
+        await self.create_task_process__response(request.processId)
+        await self.complete_process(request.processId)
+
+        return models_temporal.WorkflowResponse(
+            f"Completed process {request.processId}"
+        )
+```
+
 The final step with the code is including the imports needed for this tutorial using some feature of your IDE (*like pressing **SHIFT+ ALT + O** in Visual Studio Code*).
 
 ## Testing
@@ -813,7 +836,7 @@ After the progress activity finalization, validate the data, and then answer whe
 
 </div>
 
- using the interpreter correspondig to your virtual environment followed by the response code of the external system.
+You will receive an invoice processing confirmation number.
 
 <div class="text--center">
 
