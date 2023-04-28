@@ -857,9 +857,9 @@ We have created a special video with the entire process:
 
 Here you can watch all steps in this video:
 
-<a href="https://youtu.be/nTLGa2zheF0" target="_blank" title="Play me!">
+<a href="https://youtu.be/ZkxLQH8q_9A" target="_blank" title="Play me!">
   <p align="center">
-	<img width="75%" src="https://img.youtube.com/vi/nTLGa2zheF0/maxresdefault.jpg" alt="Play me!"/>
+	<img width="75%" src="https://img.youtube.com/vi/ZkxLQH8q_9A/maxresdefault.jpg" alt="Play me!"/>
   </p>
 </a>
 
